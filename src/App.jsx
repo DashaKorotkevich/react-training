@@ -5,11 +5,17 @@ import './styles/App.css';
 import PostItem from "./components/PostItem";
 
 function App() {
-  const [value, setValue] = useState('ТЕКСТ В ИНПУТ')
+  const [posts, setPosts] = useState([
+    {id: 1, title: 'JS', body: 'Description'},
+    {id: 2, title: 'JS', body: 'Description'},
+  ])
 
   return (
     <div class='App'>
-     <PostItem post={{id: 1, title: 'JS', body: 'Description'}}/>
+      <h1 style={{textAlign: 'center'}}>Список постов</h1>
+     {posts.map(post => 
+       <PostItem post={post} key={post.id}/> // ключи позволяют перерисовывать те элементы, в которых произошли изменения
+     )}
    
     </div>
   );
