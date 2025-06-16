@@ -3,6 +3,8 @@ import Counter from "./components/Counter";
 import ClassCounter from "./components/ClassCounter";
 import './styles/App.css';
 import PostItem from "./components/PostItem";
+import PostList from "./components/PostList";
+import MyButton from "./components/UI/button/MyButton";
 
 function App() {
   const [posts, setPosts] = useState([
@@ -11,12 +13,17 @@ function App() {
   ])
 
   return (
-    <div class='App'>
-      <h1 style={{textAlign: 'center'}}>Список постов</h1>
-     {posts.map(post => 
-       <PostItem post={post} key={post.id}/> // ключи позволяют перерисовывать те элементы, в которых произошли изменения
-     )}
-   
+    <div className='App'>
+      {/* <PostItem post={{id: 1, title: 'js', body: 'fjj'}}/> */}
+      <form>
+        <input type="text" placeholder="Название поста"/>
+        <input type="text" placeholder="Описание поста"/>
+        <MyButton>Создать пост</MyButton>
+      </form>
+      {/* {posts.map(post=>
+        <PostItem post={post} key={post.id}/>
+      )} */}
+      <PostList posts={posts} title="Список постов 1"/>
     </div>
   );
 }
