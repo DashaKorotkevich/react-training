@@ -18,7 +18,7 @@ function App() {
       <form>
         <input type="text" placeholder="Название поста"/>
         <input type="text" placeholder="Описание поста"/>
-        <MyButton>Создать пост</MyButton>
+        <MyButton disabled>Создать пост</MyButton>
       </form>
       {/* {posts.map(post=>
         <PostItem post={post} key={post.id}/>
